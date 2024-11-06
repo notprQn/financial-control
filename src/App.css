@@ -149,4 +149,268 @@ h2, h3 {
   align-items: center;
 }
 
+/* Tela de Login */
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centraliza o conteúdo */
+}
 
+.login-logo {
+  display: block;
+  margin: 0 auto 20px;
+  width: 100px;
+  height: auto;
+}
+
+.login-container h2 {
+  color: #4CAF50;
+}
+
+.login-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #45a049;
+}
+
+.login-button:active {
+  background-color: #3e8e41;
+}
+
+.login-links {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.login-links a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.login-links a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo dos ícones */
+.input-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.user-icon::before {
+  content: "\f007"; /* Código do ícone de usuário (font awesome ou similar) */
+  font-family: 'FontAwesome';
+}
+
+.password-icon::before {
+  content: "\f023"; /* Código do ícone de senha (font awesome ou similar) */
+  font-family: 'FontAwesome';
+}
+
+.email-icon::before {
+  content: "\f0e0"; /* Código do ícone de email (font awesome ou similar) */
+  font-family: 'FontAwesome';
+}
+
+.custom-input {
+  padding-left: 30px; /* Espaço para o ícone */
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  outline: none;
+}
+
+/* Tela de Cadastro */
+.signup-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.signup-logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 100px;
+  height: 100px;
+}
+
+.signup-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+  background-color: #45a049;
+}
+
+.signup-button:active {
+  background-color: #3e8e41;
+}
+
+.signup-links {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.signup-links a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.signup-links a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo da Página Esqueci Minha Senha */
+.forgot-password-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.forgot-password-logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 100px; /* Tamanho adequado */
+  height: 100px; /* Tamanho adequado */
+}
+
+.forgot-password h2 {
+  text-align: center;
+  color: #4CAF50;
+}
+
+.forgot-password-message {
+  text-align: center;
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+.forgot-password-input-container {
+  position: relative;
+  margin-bottom: 15px; /* Adiciona espaço entre os campos */
+}
+
+.forgot-password-input-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.forgot-password-email-icon::before {
+  content: "\f0e0"; /* Código do ícone de email */
+  font-family: 'FontAwesome'; /* Certifique-se de ter o FontAwesome incluído */
+}
+
+.forgot-password-input {
+  padding-left: 30px; /* Espaço para o ícone */
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.forgot-password-input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  outline: none;
+}
+
+.forgot-password-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.forgot-password-button:hover {
+  background-color: #45a049;
+}
+
+.forgot-password-button:active {
+  background-color: #3e8e41;
+}
+
+.forgot-password-links {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.forgot-password-links a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.forgot-password-links a:hover {
+  text-decoration: underline;
+}
