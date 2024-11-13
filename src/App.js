@@ -4,7 +4,10 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import { ReactComponent as AlimentacaoIcon } from './icons/food.svg';
 import { ReactComponent as TransporteIcon } from './icons/transport.svg';
 import { ReactComponent as MoradiaIcon } from './icons/house.svg';
-import Select from 'react-select'; 
+import Select from 'react-select';
+import Login from './Login';
+import Signup from './Signup';
+import ForgotPassword from './ForgotPassaword';
 import { jsPDF } from 'jspdf';
 import * as XLSX from 'xlsx';
 import './App.css';
@@ -21,6 +24,9 @@ function App() {
   const [saldoData, setSaldoData] = useState([]);
   const [fluxoDeCaixaData, setFluxoDeCaixaData] = useState([]);
   const [timeFilter, setTimeFilter] = useState('mensal');
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Estado de autenticação
+  const [isSignup, setIsSignup] = useState(false); // Estado para alternar entre Login e Signup
+  const [isForgotPassword, setIsForgotPassword] = useState(false); // Estado para alternar para Esqueci Minha Senha
 
   useEffect(() => {
     async function fetchBanks() {
@@ -208,8 +214,32 @@ function App() {
     lucro: rec.receita - despesasData[idx].despesa,
   }));
 
+  // Função para simular login
+  const handleLogin = () => {
+    // Lógica de autenticação
+    setIsLoggedIn(true);
+  };
+
+  // Função para alternar para a tela de signup
+  const handleSignup = () => {
+    setIsSignup(true);
+  };
+
+  // Função para voltar para a tela de login
+  const handleBackToLogin = () => {
+    setIsSignup(false);
+    setIsForgotPassword(false);
+  };
+
+  // Função para alternar para a tela de esqueci minha senha
+  const handleForgotPassword = () => {
+    setIsForgotPassword(true);
+  };
+
   return (
     <div className="container">
+      {isLoggedIn ? (
+        <>
       <header className="personal-info">
         <h1>Bem-vindo, [Nome do Usuário]</h1>
         <p>Saldo Total: R$ {saldoTotal.toFixed(2)}</p>
@@ -398,6 +428,21 @@ function App() {
           <p>Contas a Receber: {contasAReceber.length}</p>
         </div>
       </section>
+      </>
+      ) : isForgotPassword ? (
+        // Mostra a tela de "Esqueci Minha Senha" se isForgotPassword for true
+        <ForgotPassword handleBackToLogin={handleBackToLogin} />
+      ) : isSignup ? (
+        // Mostra a tela de cadastro se isSignup for true
+        <Signup handleBackToLogin={handleBackToLogin} />
+      ) : (
+        // Se o usuário não está logado, mostra a tela de login
+        <Login 
+        handleLogin={handleLogin} 
+        handleSignup={handleSignup} 
+        handleForgotPassword={handleForgotPassword} 
+        />
+      )}
     </div>
   );
 }
